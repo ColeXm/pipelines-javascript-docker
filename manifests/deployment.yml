@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: colexmpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: colexmpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: colexmpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: colexmpipelinesjavascriptdocker 
+          image: coletest.azurecr.io/colexmpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
